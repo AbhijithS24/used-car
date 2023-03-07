@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+.big-button {
+	width:300px;
+	height:300px;
+}  
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+  }
