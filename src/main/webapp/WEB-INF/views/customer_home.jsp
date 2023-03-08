@@ -2,17 +2,76 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page isELIgnored="false" %>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>Welcome ${customer.name}</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    <h1>Welcome ${customer.name }</h1><br><br>
+    <div class="row">
+    <div class="col">
+       <label for="sort">Sort</label>
+    <select>
+      <option value="0" style="display: none">Select</option>
+
+    
+    </select>
+    </div>
+    <div class="col">
+    <form action="filter" method="post">
+    <input type="hidden" value="${customer.email}" name="email">
+         <button class="btn btn-success medium-button">Filter</button>
+    </form>
+
+    </div>
+  
+    </div><br><br>
+  
+    
+    
+    
+    
+    <table>
+  <tr>
+    <th></th>
+    <th>Model</th>
+  <th>Manafacurer</th>
+    <th>Year</th>
+      <th>Transmission</th>
+        <th>Color</th>
+          <th>Kilometers driven</th>
+            <th>Expected Price</th>
+            
+  
+  </tr>
+    <tr>
+     
       <c:forEach var="car" items="${car}">
-      
-      <h1>${car.model }</h1>
-      </c:forEach>
-</body>
+<form method="post" action="cardetails">
+        <tr>
+        <td><img alt="car_image" src="${car.imgurl }" width="300px" height="100px"></td>
+        <td>${car.model }</td>
+          <td>${car.manafacturer }</td>
+            <td>${car.year}</td>
+              <td>${car.transmission }</td>
+              <td>${car.color }</td>
+                <td>${car.kmdriven }</td>
+                  <td>${car.price }</td> 
+                  <input type="hidden"value="${customer.email}" name="email">
+                  <input type="hidden"value="${car.ad_id}" name="carid">
+                  <td><button class="btn btn-primary" type="submit">View Details</button></td>
+                  
+                  </form>
+         </c:forEach>
+  <tr>
+ 
+    </table>
+    </div>
+  </body>
 </html>

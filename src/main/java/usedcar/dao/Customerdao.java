@@ -4,6 +4,7 @@ import java.util.List;
 
 import usedcar.model.Car;
 import usedcar.model.Customer;
+import usedcar.model.Quote;
 
 public interface Customerdao {
 
@@ -16,5 +17,9 @@ public interface Customerdao {
 	public Customer fetchcustomer(String email, String password);
 
 	public List<Car> fetchCar();
+
+	public Car carDetails(int id);
+
+	public int makeOffer(Quote quote);
 
 }

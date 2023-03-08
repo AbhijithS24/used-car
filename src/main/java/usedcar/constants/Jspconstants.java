@@ -11,4 +11,7 @@ public class Jspconstants {
 	public String adcar = "admin_adcar";
 	public String adSuccess = "admin_adsuccess";
 	public String adViewcust = "admin_viewcust";
+	public String custCarDetails = "customer_cardetails";
+	public String custQuoteSuccess = "customer_quoteSuccess";
+	public String custFilter = "customer_filter";
 }

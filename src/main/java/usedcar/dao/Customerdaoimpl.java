@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import usedcar.model.Car;
 import usedcar.model.Customer;
+import usedcar.model.Quote;
 
 @Repository
 public class Customerdaoimpl implements Customerdao {
@@ -56,6 +57,20 @@ public class Customerdaoimpl implements Customerdao {
 		RowMapper<Car> carMapper = new Carmapperimpl();
 		List<Car> car = this.jdbctemplate.query(query, carMapper);
 		return car;
+	}
+
+	public Car carDetails(int id) {
+		String query = "select * from car where ad_id=?";
+		RowMapper<Car> carMapper = new Carmapperimpl();
+		Car car = this.jdbctemplate.queryForObject(query, carMapper, id);
+		return car;
+	}
+
+	public int makeOffer(Quote quote) {
+		String query = "insert into quote(ad_id,model,manafacturer,email,remarks,quote) values (?,?,?,?,?,?) ";
+		int r = this.jdbctemplate.update(query, quote.getAd_id(), quote.getModel(), quote.getManafacturer(),
+				quote.getEmail(), quote.getRemarks(), quote.getQuote());
+		return r;
 	}
 
 }
