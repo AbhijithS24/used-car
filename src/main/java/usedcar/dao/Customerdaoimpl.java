@@ -73,4 +73,11 @@ public class Customerdaoimpl implements Customerdao {
 		return r;
 	}
 
+	public List<Car> filter(String query) {
+
+		RowMapper<Car> carMapper = new Carmapperimpl();
+		List<Car> car = this.jdbctemplate.query(query, carMapper);
+		return car;
+	}
+
 }

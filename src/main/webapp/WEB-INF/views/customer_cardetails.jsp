@@ -29,7 +29,7 @@
    <h5>Color: ${car.color }</h5>
    <h5>Kilometers Driven: ${car.kmdriven }</h5>
    <h5>Expected price: ${car.price } </h5>
-   <form action="makeoffer" method="post">
+   <form action="customer/makeoffer" method="post">
       <h5>
       <label for="remarks">Remarks</label> 
       <textarea id="remarks" name="remarks" rows="2" cols="50"></textarea>

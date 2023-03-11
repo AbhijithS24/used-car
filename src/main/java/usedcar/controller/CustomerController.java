@@ -21,6 +21,7 @@ import usedcar.model.Quote;
 import usedcar.service.UserService;
 
 @Controller
+@RequestMapping("/customer")
 public class CustomerController {
 
 	@Autowired
@@ -52,11 +53,14 @@ public class CustomerController {
 	@RequestMapping(path = "/customerlogin", method = RequestMethod.POST)
 	public String userlogin(@RequestParam("email") String email, @RequestParam("password") String password, Model m) {
 
-		int r = userservice.login(email, password);
-		if (r == 1) {
+		int isPresent = userservice.login(email, password);
+		if (isPresent == 1) {
 			Customer customer = customerdao.fetchcustomer(email, password);
 			List<Car> car = customerdao.fetchCar();
-
+			List<Color> color = admindao.fetchColor();
+			List<Manafacturer> manafact = admindao.fetchManafact();
+			m.addAttribute("color", color);
+			m.addAttribute("manafact", manafact);
 			m.addAttribute("car", car);
 			m.addAttribute("customer", customer);
 			return jconst.custhome;
@@ -82,21 +86,18 @@ public class CustomerController {
 
 	}
 
-	@RequestMapping(path = "filter", method = RequestMethod.POST)
-	public String filter(@RequestParam("email") String email, Model m) {
-		List<Color> color = admindao.fetchColor();
-		List<Manafacturer> manafact = admindao.fetchManafact();
-		m.addAttribute("color", color);
-		m.addAttribute("manafact", manafact);
-		m.addAttribute("email", email);
-		return jconst.custFilter;
+	@RequestMapping(path = "/filter", method = RequestMethod.POST)
+	public String filter(@RequestParam("color") String color, @RequestParam("manafacturer") String manafacturer,
+			@RequestParam("transmission") String transmission, Model m) {
+		List<Car> car = userservice.filter(color, manafacturer, transmission);
+		m.addAttribute("car", car);
+		return "test";
 	}
 
 	@RequestMapping(path = "/sortmct", method = RequestMethod.POST)
 	public String sortmct(@RequestParam("color") String color, @RequestParam("manafacturer") String manafacturer,
 			@RequestParam("transmission") String transmission, Model m) {
 
-		List<Car> car = userservice.sort();
 		return "";
 	}
 

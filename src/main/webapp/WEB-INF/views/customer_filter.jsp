@@ -14,15 +14,15 @@
     <div class="container">
     
    
-    <h1>Filter By</h1><br><br>
-    <form method="post" action="sortmct"> 
+    <h1>Filter By</h1>
+    <form method="post" action="customer/sortmct"> 
      <label for="color">Select the Color</label>
       <select name="color">
         <option value="0" style="display: none">Select</option>
         <c:forEach var="color" items="${color}">
           <option value="${color.name }">${color.name }</option>
-        </c:forEach>
-      </select> <br /><br />
+        </c:forEach><br>
+      </select>
 
       <label for="manafacturer">Select Manafacturer</label>
       <select name="manafacturer">

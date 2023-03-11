@@ -2,12 +2,12 @@ package usedcar.model;
 
 public class Quote {
 
-	public int ad_id;
-	public String model;
-	public String manafacturer;
-	public String email;
-	public String remarks;
-	public int quote;
+	private int ad_id;
+	private String model;
+	private String manafacturer;
+	private String email;
+	private String remarks;
+	private int quote;
 
 	public int getAd_id() {
 		return ad_id;

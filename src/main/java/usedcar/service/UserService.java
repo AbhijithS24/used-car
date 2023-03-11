@@ -8,6 +8,6 @@ public interface UserService {
 
 	public int login(String email, String password);
 
-	public List<Car> sort(String color, String manafactuer, String transmission);
+	public List<Car> filter(String color, String manafactuer, String transmission);
 
 }

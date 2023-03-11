@@ -22,4 +22,6 @@ public interface Customerdao {
 
 	public int makeOffer(Quote quote);
 
+	public List<Car> filter(String query);
+
 }

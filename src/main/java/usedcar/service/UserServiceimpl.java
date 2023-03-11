@@ -19,9 +19,32 @@ public class UserServiceimpl implements UserService {
 		return r;
 	}
 
-	public List<Car> sort(String color, String manafactuer, String transmission) {
-		if()
-		return null;
+	public List<Car> filter(String color, String manafacturer, String transmission) {
+		StringBuilder queryBuilder = new StringBuilder("SELECT * FROM car WHERE ");
+
+		if (!color.isBlank()) {
+			queryBuilder.append("color = '" + color + "'");
+
+			if (!transmission.isBlank()) {
+				queryBuilder.append(" AND transmission = '" + transmission + "'");
+			}
+
+			if (!manafacturer.isBlank()) {
+				queryBuilder.append(" AND manafacturer = '" + manafacturer + "'");
+			}
+		} else if (!transmission.isBlank()) {
+			queryBuilder.append("transmission = '" + transmission + "'");
+
+			if (!manafacturer.isBlank()) {
+				queryBuilder.append(" AND manafacturer = '" + manafacturer + "'");
+			}
+		} else if (!manafacturer.isBlank()) {
+			queryBuilder.append("manafacturer = '" + manafacturer + "'");
+		}
+
+		String query = queryBuilder.toString();
+		List<Car> car = customerdao.filter(query);
+		return car;
 	}
 
 }

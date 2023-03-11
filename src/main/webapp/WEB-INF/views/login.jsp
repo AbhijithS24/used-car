@@ -21,7 +21,7 @@
     <div class="row">
     <div class="col">
     <h1>Login</h1>
-    <form action="customerlogin" method="post">
+    <form action="customer/customerlogin" method="post">
     <label for="email">Enter your Email</label>
     <input name="email" type="email" required="true"><br><br>
         <label for="password">Enter your Password</label>
@@ -32,7 +32,7 @@
     </div>
     <div class="col">
     <h1>Login as Admin</h1>
-     <form action="adminlogin" method="post">
+     <form action="admin/adminlogin" method="post">
     <label for="email">Enter email</label>
     <input name="email" type="text" required="true"><br><br>
         <label for="password">Enter password</label>

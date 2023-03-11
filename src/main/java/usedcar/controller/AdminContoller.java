@@ -19,6 +19,7 @@ import usedcar.model.Customer;
 import usedcar.model.Manafacturer;
 
 @Controller
+@RequestMapping("/admin")
 public class AdminContoller {
 
 	@Autowired

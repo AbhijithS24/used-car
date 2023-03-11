@@ -33,7 +33,7 @@
         <td>${cust.pincode }</td>
         <td>${cust.email }</td>
         <td>
-        <form action="makeadmin" method="post">
+        <form action="admin/makeadmin" method="post">
         <input type="hidden" value=${cust.email } name="email">
          <button class="btn btn-primary">Make Admin</button>
         </form>

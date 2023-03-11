@@ -2,15 +2,15 @@ package usedcar.model;
 
 public class Car {
 
-	public int ad_id;
-	public String imgurl;
-	public String model;
-	public String manafacturer;
-	public int year;
-	public String transmission;
-	public String color;
-	public int kmdriven;
-	public int price;
+	private int ad_id;
+	private String imgurl;
+	private String model;
+	private String manafacturer;
+	private int year;
+	private String transmission;
+	private String color;
+	private int kmdriven;
+	private int price;
 
 	public String getImgurl() {
 		return imgurl;

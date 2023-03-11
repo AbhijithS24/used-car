@@ -16,7 +16,7 @@ pageEncoding="ISO-8859-1"%>
   <body>
     <div class="container">
       <h1 class="text-center">New Customer Registration</h1><br /><br /><br /><br />
-      <form action="processregister" method="post">
+      <form action="customer/processregister" method="post">
         <label for="name">Enter your Name</label>
         <input name="name" type="text" required="true" /><br /><br />
         <label for="house_name">Enter your House Name</label>

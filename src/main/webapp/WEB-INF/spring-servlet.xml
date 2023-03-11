@@ -14,7 +14,8 @@
      <context:component-scan base-package="usedcar"></context:component-scan>
     
          <mvc:annotation-driven/>
-   <mvc:resources mapping="/resources/**" location="/resources/" />
+        <mvc:resources mapping="customer/resources/**" location="/resources/" />
+        <mvc:resources mapping="admin/resources/**" location="/resources/" />
     
      <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
      name="viewResolver">

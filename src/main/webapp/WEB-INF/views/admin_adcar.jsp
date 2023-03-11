@@ -18,7 +18,7 @@ prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <div class="container">
       <h1>Create a new Ad</h1>
       <br /><br /><br />
-      <form action="postcar" method="post">
+      <form action="admin/postcar" method="post">
         <label>Select image</label>
       <select name="imgurl">
         <option value="0" style="display: none">Select</option>
@@ -42,8 +42,6 @@ prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
       <option value="0" style="display: none">Select</option>
       <option value="Manual">Manual</option>
       <option value="Automatic">Automatic</option>
-      <option value="Hybrid">Hybrid</option>
-      <option value="Electric">Electric</option>
       </select><br><br>
       <label for="color">Select the Color</label>
       <select name="color">
